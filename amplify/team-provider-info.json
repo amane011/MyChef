@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mychef-staging-203531-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654464765:role/amplify-mychef-staging-203531-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654464765:role/amplify-mychef-staging-203531-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-mychef-staging-203531-deployment",
+      "UnauthRoleName": "amplify-mychef-staging-203531-unauthRole",
+      "StackName": "amplify-mychef-staging-203531",
+      "StackId": "arn:aws:cloudformation:eu-north-1:654654464765:stack/amplify-mychef-staging-203531/95c3d570-d4e6-11ee-b78c-0e64ece0cf6a",
+      "AmplifyAppId": "d3r5p846xa7566"
+    },
+    "categories": {
+      "api": {
+        "mychef": {}
+      }
+    }
+  }
+}
