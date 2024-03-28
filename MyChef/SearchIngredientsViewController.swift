@@ -22,8 +22,8 @@ class SearchIngredientsViewController: UIViewController {
         view.backgroundColor = .black
         configureIngredientsCollectionView()
         configureSearchController()
-        navigationController?.navigationBar.tintColor  = .white
-        UITabBar.appearance().tintColor = .white
+        navigationController?.navigationBar.tintColor  = .appCream
+        UITabBar.appearance().tintColor = .appCream
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +75,7 @@ class SearchIngredientsViewController: UIViewController {
     func showMessage(_ message: String) {
         let messageLabel = UILabel()
         messageLabel.text = message
-        messageLabel.textColor = .white
+        messageLabel.textColor = .appCream
         messageLabel.backgroundColor = UIColor.black
         messageLabel.textAlignment = .center
         messageLabel.layer.cornerRadius = 8

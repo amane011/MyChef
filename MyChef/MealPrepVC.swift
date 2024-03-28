@@ -22,7 +22,7 @@ class MealPrepVC: UIViewController  & UINavigationControllerDelegate {
     }
     
     private func configureVC(){
-        view.backgroundColor = .white
+        view.backgroundColor = .appCream
         navigationController?.navigationBar.tintColor  = .black
     }
     

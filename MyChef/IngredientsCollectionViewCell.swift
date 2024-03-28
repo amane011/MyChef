@@ -23,7 +23,9 @@ class IngredientsCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(ingredientLabel)
         contentView.layer.cornerRadius = 8
         contentView.layer.masksToBounds = true
-        contentView.backgroundColor = .white
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.borderWidth = 2
+        contentView.backgroundColor = .appCream
         
         ingredientLabel.translatesAutoresizingMaskIntoConstraints = false
         ingredientLabel.textAlignment = .center

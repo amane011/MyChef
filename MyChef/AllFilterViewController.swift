@@ -39,7 +39,7 @@ class AllFilterViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .appCream
         print(ingredients)
         setupIngredientsCard()
         setupCalories()
@@ -68,7 +68,9 @@ class AllFilterViewController: UIViewController{
     
     private func configureContainerView() {
         ingredientsContainerView.translatesAutoresizingMaskIntoConstraints = false
-        ingredientsContainerView.backgroundColor = .black
+        ingredientsContainerView.backgroundColor = UIColor.systemBrown.withAlphaComponent(0.2)
+        ingredientsContainerView.layer.borderWidth = 4
+        ingredientsContainerView.layer.borderColor = UIColor.brown.cgColor
         ingredientsContainerView.layer.cornerRadius = 10
         ingredientsContainerView.layer.masksToBounds = true
         view.addSubview(ingredientsContainerView)
@@ -89,8 +91,10 @@ class AllFilterViewController: UIViewController{
         ingredientsHeaderLabel.textAlignment = .left
         ingredientsHeaderLabel.layer.cornerRadius = 6
         ingredientsHeaderLabel.layer.masksToBounds = true
-        ingredientsHeaderLabel.backgroundColor = .white
+        ingredientsHeaderLabel.backgroundColor = .appCream
         ingredientsHeaderLabel.textAlignment = .center
+        ingredientsHeaderLabel.layer.borderWidth = 2
+        ingredientsHeaderLabel.layer.borderColor = UIColor.black.cgColor
         ingredientsContainerView.addSubview(ingredientsHeaderLabel)
 
         NSLayoutConstraint.activate([
@@ -129,7 +133,7 @@ class AllFilterViewController: UIViewController{
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addMoreClicked))
         addMoreImage.image = UIImage(systemName: "plus.circle")
         addMoreImage.translatesAutoresizingMaskIntoConstraints = false
-        addMoreImage.tintColor = .white
+        addMoreImage.tintColor = .black
         addMoreImage.isUserInteractionEnabled = true
         addMoreImage.isUserInteractionEnabled = true
         addMoreImage.addGestureRecognizer(tapGesture)
@@ -146,7 +150,7 @@ class AllFilterViewController: UIViewController{
         addMoreTextLabel.text = "Click to add more ingredients"
         addMoreTextLabel.font = UIFont.boldSystemFont(ofSize: 13)
         addMoreTextLabel.textAlignment = .left
-        addMoreTextLabel.textColor = .white
+        addMoreTextLabel.textColor = .black
         addMoreTextLabel.isUserInteractionEnabled = true
         addMoreTextLabel.addGestureRecognizer(tapGesture)
         ingredientsContainerView.addSubview(addMoreTextLabel)
@@ -186,7 +190,7 @@ class AllFilterViewController: UIViewController{
         caloriesHeaderLabel.text = "Calories"
         caloriesHeaderLabel.font = UIFont.boldSystemFont(ofSize: 18)
         caloriesHeaderLabel.textColor = .black
-        caloriesHeaderLabel.backgroundColor = .white
+        caloriesHeaderLabel.backgroundColor = .appCream
         caloriesHeaderLabel.layer.cornerRadius = 6
         caloriesHeaderLabel.layer.masksToBounds = true
         caloriesHeaderLabel.textAlignment = .center
@@ -224,8 +228,8 @@ class AllFilterViewController: UIViewController{
     private func configureRadioButton(_ button: RadioButton, title: String, tag: Int) {
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.setTitleColor(.white, for: .normal)
-        button.tintColor = .white
+        button.setTitleColor(.appCream, for: .normal)
+        button.tintColor = .appCream
        
         button.tag = tag
         button.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
@@ -273,7 +277,7 @@ class AllFilterViewController: UIViewController{
         dietPrefHeaderLabel.textAlignment = .center
         dietPrefHeaderLabel.layer.cornerRadius = 6
         dietPrefHeaderLabel.layer.masksToBounds = true
-        dietPrefHeaderLabel.backgroundColor = .white
+        dietPrefHeaderLabel.backgroundColor = .appCream
         dietPrefContainerView.addSubview(dietPrefHeaderLabel)
 
         NSLayoutConstraint.activate([
@@ -310,7 +314,7 @@ class AllFilterViewController: UIViewController{
         createReciepeButton.translatesAutoresizingMaskIntoConstraints = false
         createReciepeButton.backgroundColor = .black
         createReciepeButton.setTitle("Create Reciepe", for: .normal)
-        createReciepeButton.setTitleColor(.white, for: .normal)
+        createReciepeButton.setTitleColor(.appCream, for: .normal)
         createReciepeButton.layer.cornerRadius = 16
         createReciepeButton.addTarget(self, action: #selector(createRecipe), for: .touchUpInside)
         

@@ -2,8 +2,9 @@ import UIKit
 
 extension UIColor {
     static var appCream: UIColor {
-           return UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1)
-       }
+            return UIColor(red: 254/255, green: 251/255, blue: 246/255, alpha: 1)
+        }
+           
        
        static var appBrown: UIColor {
            return UIColor(red: 153/255, green: 88/255, blue: 42/255, alpha: 1)

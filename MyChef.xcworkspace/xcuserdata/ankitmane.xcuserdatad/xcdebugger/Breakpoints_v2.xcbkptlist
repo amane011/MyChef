@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FCD7F4AB-D08C-4D01-91E7-947AE033946C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyChef/MealPrepVC.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "82659DE3-4BF8-4875-81E1-03808A8EF8BC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyChef/SearchIngredientsViewController.swift"
@@ -87,16 +87,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F62B8967-8BAC-4088-AEC7-8C7F6F2326C0"
+            uuid = "19C0D23D-E42C-4020-98D2-B7D155F81C97"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyChef/RecipeViewController.swift"
+            filePath = "MyChef/OpenAIService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "generateRecipe()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "generateRecipe(from:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

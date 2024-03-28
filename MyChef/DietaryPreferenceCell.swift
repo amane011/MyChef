@@ -31,7 +31,7 @@ class DietaryPreferenceCell: UICollectionViewCell {
         ])
         
         pref.translatesAutoresizingMaskIntoConstraints = false;
-        pref.textColor = .white
+        pref.textColor = .appCream
         pref.font = UIFont.boldSystemFont(ofSize: 16)
         addSubview(pref)
         
@@ -46,6 +46,6 @@ class DietaryPreferenceCell: UICollectionViewCell {
     func configure(with preference: String, isSelected: Bool) {
         pref.text = preference
         checkbox.image = isSelected ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
-        checkbox.tintColor = .white
+        checkbox.tintColor = .appCream
     }
 }

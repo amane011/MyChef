@@ -70,4 +70,39 @@ class OpenAIService {
         
         task.resume()
     }
+    
+    func parseRecipe(from recipeText: String) -> ParsedRecipe? {
+        let titlePattern = "^(.+?)\\n\\nIngredients:"
+        let ingredientsPattern = "Ingredients:\\n(.+?)\\n\\nInstructions:"
+        let stepsPattern = "Instructions:\\n(.+)"
+
+        let titleRegex = try! NSRegularExpression(pattern: titlePattern, options: [])
+        let ingredientsRegex = try! NSRegularExpression(pattern: ingredientsPattern, options: [.dotMatchesLineSeparators])
+        let stepsRegex = try! NSRegularExpression(pattern: stepsPattern, options: [.dotMatchesLineSeparators])
+
+        let nsRecipeText = recipeText as NSString
+
+        // Extract title
+        guard let titleMatch = titleRegex.firstMatch(in: recipeText, options: [], range: NSRange(location: 0, length: nsRecipeText.length)),
+              let titleRange = Range(titleMatch.range(at: 1), in: recipeText) else { return nil }
+        let title = String(recipeText[titleRange])
+
+        // Extract ingredients
+        guard let ingredientsMatch = ingredientsRegex.firstMatch(in: recipeText, options: [], range: NSRange(location: 0, length: nsRecipeText.length)),
+              let ingredientsRange = Range(ingredientsMatch.range(at: 1), in: recipeText) else { return nil }
+        let ingredientsText = String(recipeText[ingredientsRange])
+        let ingredients = ingredientsText.components(separatedBy: CharacterSet.newlines).map { line in
+            line.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: CharacterSet(charactersIn: "- "))
+        }.filter { !$0.isEmpty }
+
+        // Extract steps
+        guard let stepsMatch = stepsRegex.firstMatch(in: recipeText, options: [], range: NSRange(location: 0, length: nsRecipeText.length)),
+              let stepsRange = Range(stepsMatch.range(at: 1), in: recipeText) else { return nil }
+        let stepsText = String(recipeText[stepsRange])
+        let steps = stepsText.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+
+        return ParsedRecipe(title: title, ingredients: ingredients, steps: steps)
+    }
+
+
 }
